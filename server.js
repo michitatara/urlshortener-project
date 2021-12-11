@@ -1,3 +1,4 @@
+const mySecret = process.env['DB_URI']
 require('dotenv').config();
 const express = require('express');
 const bodyParser= require("body-parser")
@@ -8,7 +9,6 @@ const dns = require('dns');
 const app = express();
 
 // Basic Configuration
-const mySecret = process.env['DB_URL']
 const port = process.env.PORT || 3000;
 mongoose.connect(mySecret, {useNewUrlParser:true, useUnifiedTopology:true});
 console.log(mongoose.connection.readyState);
